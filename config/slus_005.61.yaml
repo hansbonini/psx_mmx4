@@ -6,7 +6,7 @@ options:
   elf_path: ../code/build/slus_005.61.elf
   base_path: ../code/
   platform: psx
-  compiler: PSYQ
+  compiler: gcc
 
   asm_path: ../code/asm
   src_path: ../code/src
