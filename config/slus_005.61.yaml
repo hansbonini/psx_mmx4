@@ -1,0 +1,239 @@
+name: SLUS_005.61
+sha1: 213733031136d095ca275d6957695aa25011cfa5
+options:
+  basename: slus_005.61
+  target_path: ../ISO/SLUS_005.61
+  elf_path: ../code/build/slus_005.61.elf
+  base_path: ../code/
+  platform: psx
+  compiler: PSYQ
+
+  asm_path: ../code/asm
+  src_path: ../code/src
+  # build_path: build
+  # create_asm_dependencies: True
+
+  ld_script_path: slus_005.61.ld
+  ld_dependencies: True
+
+  find_file_boundaries: True
+  gp_value: 0x8012F418
+
+  o_as_suffix: True
+  use_legacy_include_asm: False
+
+  asm_function_macro: glabel
+  asm_jtbl_label_macro: jlabel
+  asm_data_macro: dlabel
+
+  disassemble_all: true
+
+  section_order: [".rodata", ".text", ".data", ".bss"]
+  # auto_link_sections: [".data", ".rodata", ".bss"]
+
+  symbol_addrs_path:
+    - ../config/symbol_addrs.txt
+  reloc_addrs_path:
+    - reloc_addrs.txt
+
+  # undefined_funcs_auto_path: undefined_funcs_auto.txt
+  # undefined_syms_auto_path: undefined_syms_auto.txt
+
+  extensions_path: ../tools/splat_ext
+
+  subalign: 2
+
+  string_encoding: ASCII
+  data_string_encoding: ASCII
+  rodata_string_guesser_level: 2
+  data_string_guesser_level: 2
+
+segments:
+  - [0x0, header]
+
+  - name: main
+    type: code
+    start: 0x800
+    vram: 0x80010000
+    # bss_size: Please fill out this value when you figure out the bss size
+    subsegments:
+      - [0x800, rodata, main]
+      - [0x824, rodata, main]
+      - [0x870, rodata, main]
+      - [0x8E4, rodata, main]
+      - [0xB98, rodata, main]
+      - [0xC04, rodata, main]
+      - [0xC30, rodata, main]
+      - [0xC44, rodata, main]
+      - [0xC80, rodata, main]
+      - [0xCB4, rodata, main]
+      - [0xCD8, rodata, main]
+      - [0xD2C, rodata, main]
+      - [0xD48, rodata, main]
+      - [0xDC4, rodata, main]
+      - [0xF30, rodata, main]
+      - [0xF44, rodata, main]
+      - [0xFC8, rodata, main]
+      - [0x105C, rodata, main]
+      - [0x1090, rodata, main]
+      - [0x1144, rodata, main]
+      - [0x1490, rodata, main]
+      - [0x1514, rodata, main]
+      - [0x1530, rodata, main]
+      - [0x1544, rodata, main]
+      - [0x1598, rodata, main]
+      - [0x15AC, rodata, main]
+      - [0x1620, rodata, main]
+      - [0x1694, rodata, main]
+      - [0x1770, rodata, main]
+      - [0x19CC, rodata, main]
+      - [0x1A08, rodata, main]
+      - [0x1A64, rodata, main]
+      - [0x1A80, rodata, main]
+      - [0x1BA4, rodata, main]
+      - [0x1C18, rodata, main]
+      - [0x1C9C, rodata, main]
+      - [0x1CB0, rodata, main]
+      - [0x1CC4, rodata, main]
+      - [0x1CF0, rodata, main]
+      - [0x1D30, rodata, main]
+      - [0x1DB8, rodata, main]
+      - [0x1E10, rodata, main]
+      - [0x2378, rodata, main]
+      - [0x238C, rodata, main]
+      - [0x281C, asm, main]
+      - [0xCC7FC, c, psyq/libsnd/cc_7]
+      - [0xCC8D4, c, psyq/libsnd/cc_100]
+      - [0xCC94C, c, psyq/libsnd/midicc]
+      - [0xCCB8C, c, psyq/libsnd/midinote]
+      - [0xCCC74, c, psyq/libsnd/midiprog]
+      - [0xCCCEC, c, psyq/libsnd/miditime]
+      - [0xCCDA4, c, psyq/libsnd/ssclose]
+      - [0xCCF68, c, psyq/libsnd/ssend]
+      - [0xCD02C, c, psyq/libsnd/ssinit]
+      - [0xCD164, c, psyq/libsnd/ssloop]
+      - [0xCD1F4, c, psyq/libsnd/ssopenj]
+      - [0xCD320, c, psyq/libsnd/sepinit]
+      - [0xCD6D0, c, psyq/libsnd/ssplay]
+      - [0xCD740, c, psyq/libsnd/ssquit]
+      - [0xCD760, c, psyq/libsnd/s_q]
+      - [0xCD7DC, c, psyq/libsnd/playmode]
+      - [0xCD8DC, c, psyq/libsnd/sssattr]
+      - [0xCD970, c, psyq/libspu/s_sca]
+      - [0xCDD04, c, psyq/libsnd/sssmv]
+      - [0xCDD54, c, psyq/libsnd/ssstart]
+      - [0xCE08C, c, psyq/libsnd/sscall]
+      - [0xCE300, c, psyq/libsnd/cres]
+      - [0xCE5E0, c, psyq/libsnd/decres]
+      - [0xCE880, c, psyq/libsnd/pause]
+      - [0xCE924, c, psyq/libsnd/play]
+      - [0xCE950, c, psyq/libsnd/midiread]
+      - [0xCEF08, c, psyq/libsnd/next]
+      - [0xCEF10, c, psyq/libsnd/replay]
+      - [0xCEF78, c, psyq/libsnd/ssstop]
+      - [0xCF234, c, psyq/libsnd/sssv]
+      - [0xCF330, c, psyq/libsnd/sstable]
+      - [0xCF510, c, psyq/libsnd/sstick]
+      - [0xCF67C, c, psyq/libsnd/ssvol]
+      - [0xCF750, c, psyq/libsnd/tempo]
+      - [0xCF930, c, psyq/libsnd/dmyprint]
+      - [0xD02C0, c, psyq/libsnd/ut_gva]
+      - [0xD04FC, c, psyq/libsnd/ut_key]
+      - [0xD0908, c, psyq/libsnd/ut_rdep]
+      - [0xD09A0, c, psyq/libspu/s_srmp]
+      - [0xD0E98, c, psyq/libspu/s_sra]
+      - [0xD1368, c, psyq/libsnd/ut_rev]
+      - [0xD141C, c, psyq/libspu/s_sr]
+      - [0xD14EC, c, psyq/libsnd/ut_roff]
+      - [0xD150C, c, psyq/libsnd/ut_ron]
+      - [0xD152C, c, psyq/libsnd/ut_vvol]
+      - [0xD1708, c, psyq/libsnd/vm_aloc2]
+      - [0xD191C, c, psyq/libsnd/vm_f]
+      - [0xD5794, c, psyq/libetc/intr]
+      - [0xD5EA4, c, psyq/libetc/intr_vb]
+      - [0xD5FCC, c, psyq/libetc/intr_dma]
+      - [0xD6294, c, psyq/libetc/vmode]
+      - [0xD629C, c, psyq/libcd/cdrom]
+      - [0xD62CC, c, psyq/libcd/event]
+      - [0xD63D4, c, psyq/libcd/sys]
+      - [0xD6B40, c, psyq/libcd/bios]
+      - [0xD8228, c, psyq/libcd/cdread]
+      - [0xD881C, c, psyq/libcd/cdread2]
+      - [0xD88D0, c, psyq/libcd/c_002]
+      - [0xD8930, c, psyq/libcd/c_003]
+      - [0xD8988, c, psyq/libcd/c_004]
+      - [0xD8A78, c, psyq/libcd/c_005]
+      - [0xD8B00, c, psyq/libcd/c_007]
+      - [0xD8BB8, c, psyq/libcd/c_008]
+      - [0xD8BF4, c, psyq/libcd/c_009]
+      - [0xD8CB8, c, psyq/libcd/c_010]
+      - [0xD8CD8, c, psyq/libcd/c_011]
+      - [0xD9998, c, psyq/libgpu/ext]
+      - [0xD9c60, c, psyq/libgpu/prim]
+      - [0xDA54C, c, psyq/libgpu/sys]
+      - [0xDD5E0, c, psyq/libpress/libpress]
+      - [0xDDD44, c, psyq/libpress/vlc]
+      - [0xDE0D8, c, psyq/libcard/c112]
+      - [0xDE0E8, c, psyq/libcard/c171]
+      - [0xDE0F8, c, psyq/libcard/c172]
+      - [0xDE108, c, psyq/libcard/card]
+      - [0xDE140, c, psyq/libcard/a78]
+      - [0xDE150, c, psyq/libcard/a80]
+      - [0xDE160, c, psyq/libcard/init]
+      - [0xDE21C, c, psyq/libcard/a74]
+      - [0xDE22C, c, psyq/libcard/a75]
+      - [0xDE23C, c, psyq/libcard/a76]
+      - [0xDE2A4, c, psyq/libcard/patch]
+      - [0xDE3EC, c, psyq/libcard/end]
+      - [0xDE474, c, psyq/libc/a63]
+      - [0xDE48C, c, psyq/libc/c19]
+      - [0xDE49C, c, psyq/libc/c25]
+      - [0xDE4AC, c, psyq/libc/c42]
+      - [0xDE4BC, c, psyq/libc/c43]
+      - [0xDE4CC, c, psyq/libc/c63]
+      - [0xDE4DC, c, psyq/libapi/c57]
+      - [0xDE4EC, c, psyq/libapi/c68]
+      - [0xDE4FC, c, psyq/libapi/c73]
+      - [0xDE514, c, psyq/libapi/c114]
+      - [0xDE52C, c, psyq/libapi/a07]
+      - [0xDE53C, c, psyq/libapi/a08]
+      - [0xDE54C, c, psyq/libapi/a09]
+      - [0xDE55C, c, psyq/libapi/a10]
+      - [0xDE56C, c, psyq/libapi/a11]
+      - [0xDE57C, c, psyq/libapi/a12]
+      - [0xDE58C, c, psyq/libapi/a13]
+      - [0xDE59C, c, psyq/libapi/a14]
+      - [0xDE5AC, c, psyq/libapi/a15]
+      - [0xDE5BC, c, psyq/libapi/a16]
+      - [0xDE5CC, c, psyq/libapi/a23]
+      - [0xDE5DC, c, psyq/libapi/a24]
+      - [0xDE5EC, c, psyq/libapi/a25]
+      - [0xDE5FC, c, psyq/libapi/a36]
+      - [0xDE60C, c, psyq/libapi/a37]
+      - [0xDE61C, c, psyq/libapi/a50]
+      - [0xDE62C, c, psyq/libapi/a52]
+      - [0xDE63C, c, psyq/libapi/a53]
+      - [0xDE64C, c, psyq/libapi/a54]
+      - [0xDE65C, c, psyq/libapi/a65]
+      - [0xDE66C, c, psyq/libapi/a66]
+      - [0xDE67C, c, psyq/libapi/a67]
+      - [0xDE68C, c, psyq/libapi/a91]
+      - [0xDE69C, c, psyq/libapi/l10]
+      - [0xDE6AC, c, psyq/libapi/counter]
+      - [0xDEB1C, c, psyq/libapi/a18]
+      - [0xDEB2C, c, psyq/libapi/a19]
+      - [0xDEB3C, c, psyq/libapi/a20]
+      - [0xDEB4C, c, psyq/libapi/a21]
+      - [0xDEB5C, c, psyq/libapi/l02]
+      - [0xDEB6C, c, psyq/libapi/l03]
+      - [0xDEB7C, asm, main]
+      - [0xDEC0C, .rodata, main]
+      - [0x11FBF4, .rodata, psyq/libapi/counter]
+      - [0x11FC10, .sdata, psyq/libapi/counter]
+      - [0x11FC14, .rodata, main]
+      - [0x11FC1C, .rodata, main]
+      - [0x11FC30, .rodata, main]
+      - [0x11FC4C, .rodata, main]
+      - [0x11FC58, .rodata, main]
+      - [0x11FC98, .sdata, main]
+  - [0x120000]
